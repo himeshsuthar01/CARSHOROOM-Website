@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | CAVARO LUXE</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #0b0b0b;
+            color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: #080808;
+            padding: 18px 0;
+            border-bottom: 1px solid #302713;
+        }
+
+        .navbar-brand {
+            color: #d4af37 !important;
+            font-weight: 800;
+            font-size: 23px;
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            color: #eeeeee !important;
+            margin-left: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #d4af37 !important;
+        }
+
+        /* CONTACT HEADER */
+        .contact-header {
+            text-align: center;
+            padding: 65px 20px;
+            background: linear-gradient(135deg, #191919, #0b0b0b);
+            border-bottom: 1px solid #382d16;
+        }
+
+        .small-heading {
+            color: #d4af37;
+            font-size: 12px;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        .contact-header h1 {
+            color: #d4af37;
+            font-size: clamp(32px, 4vw, 46px);
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .contact-header p:last-child {
+            color: #b5b5b5;
+            margin-bottom: 0;
+        }
+
+        /* MAIN SECTION */
+        .contact-section {
+            padding: 65px 0 75px;
+        }
+
+        .section-label {
+            color: #d4af37;
+            font-size: 12px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .contact-info h2 {
+            font-size: 34px;
+            font-weight: bold;
+            line-height: 1.3;
+            margin-bottom: 18px;
+        }
+
+        .intro {
+            color: #b5b5b5;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        /* LEFT INFORMATION CARD */
+        .info-card {
+            background: #151515;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            padding: 28px;
+        }
+
+        .info-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #303030;
+        }
+
+        .info-item:first-child {
+            padding-top: 0;
+        }
+
+        .info-item:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .info-item h3 {
+            color: #d4af37;
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .info-item p {
+            color: #b5b5b5;
+            margin: 0;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+        }
+
+        /* RIGHT FORM CARD */
+        .contact-form {
+            background: #151515;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        .contact-form h2 {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .form-description {
+            color: #b5b5b5;
+            margin-bottom: 28px;
+        }
+
+        .form-label {
+            color: #e8c95a;
+            font-size: 14px;
+            margin-bottom: 9px;
+        }
+
+        .form-control,
+        .form-select {
+            background: #202020;
+            color: #ffffff;
+            border: 1px solid #424242;
+            border-radius: 5px;
+            padding: 13px;
+            min-height: 48px;
+        }
+
+        .form-control::placeholder {
+            color: #999999;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            background: #202020;
+            color: #ffffff;
+            border-color: #d4af37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+        }
+
+        .form-select option {
+            background: #202020;
+            color: #ffffff;
+        }
+
+        textarea.form-control {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        /* GOLD BUTTON */
+        .btn-gold {
+            background: #d4af37;
+            color: #111111;
+            border: 1px solid #d4af37;
+            border-radius: 5px;
+            padding: 13px 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            background: transparent;
+            color: #d4af37;
+        }
+
+        #formMessage {
+            color: #d4af37;
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #080808;
+            border-top: 1px solid #382d16;
+            padding: 25px 15px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #b5b5b5;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 991px) {
+            .contact-section {
+                padding: 45px 0;
+            }
+
+            .contact-info h2 {
+                font-size: 29px;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .contact-header {
+                padding: 45px 15px;
+            }
+
+            .contact-section {
+                padding: 35px 0 45px;
+            }
+
+            .contact-info h2 {
+                font-size: 28px;
+            }
+
+            .contact-form,
+            .info-card {
+                padding: 22px;
+            }
+
+            .navbar .nav-link {
+                margin-left: 0;
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                CAVARO LUXE
+            </a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="cars.html">Cars</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="contact-header">
+        <p class="small-heading">LET'S CONNECT</p>
+        <h1>CONTACT US</h1>
+        <p>Your dream car journey starts here.</p>
+    </header>
+
+    <!-- CONTACT CONTENT -->
+    <main class="contact-section">
+        <div class="container">
+
+            <div class="row g-4 g-lg-5 align-items-start">
+
+                <!-- LEFT COLUMN -->
+                <div class="col-lg-5">
+
+                    <div class="contact-info">
+
+                        <p class="section-label">GET IN TOUCH</p>
+
+                        <h2>Let's Find Your Dream Car</h2>
+
+                        <p class="intro">
+                            Have a question about our collection?
+                            Send us a message and tell us what you are
+                            looking for. We are here to help you discover
+                            your dream car.
+                        </p>
+
+                        <div class="info-card">
+
+                            <div class="info-item">
+                                <h3>Email Us</h3>
+                                <p>info@cavaroluxe.example</p>
+                            </div>
+
+                            <div class="info-item">
+                                <h3>Our Showroom</h3>
+                                <p>Contact us for showroom location details.</p>
+                            </div>
+
+                            <div class="info-item">
+                                <h3>Opening Hours</h3>
+                                <p>Monday – Saturday</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="col-lg-7">
+
+                    <form class="contact-form" id="contactForm">
+
+                        <h2>Send an Enquiry</h2>
+
+                        <p class="form-description">
+                            Complete the form below to tell us what you need.
+                        </p>
+
+                        <div class="mb-4">
+                            <label for="name" class="form-label">
+                                Full Name
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   id="name"
+                                   name="name"
+                                   placeholder="Enter your full name"
+                                   required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="form-label">
+                                Email Address
+                            </label>
+
+                            <input type="email"
+                                   class="form-control"
+                                   id="email"
+                                   name="email"
+                                   placeholder="Enter your email address"
+                                   required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="phone" class="form-label">
+                                Phone Number
+                            </label>
+
+                            <input type="tel"
+                                   class="form-control"
+                                   id="phone"
+                                   name="phone"
+                                   placeholder="Enter your phone number">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="car" class="form-label">
+                                Car of Interest
+                            </label>
+
+                            <select class="form-select" id="car" name="car">
+                                <option value="">Select a collection</option>
+                                <option>Luxury Sports Car</option>
+                                <option>Luxury Sedan</option>
+                                <option>Performance Coupe</option>
+                                <option>Luxury SUV</option>
+                                <option>Luxury Convertible</option>
+                                <option>Grand Tourer</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="form-label">
+                                Your Message
+                            </label>
+
+                            <textarea class="form-control"
+                                      id="message"
+                                      name="message"
+                                      rows="4"
+                                      placeholder="Write your message here"
+                                      required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold">
+                            Send Enquiry →
+                        </button>
+
+                        <p id="formMessage" role="status"></p>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 CAVARO LUXE. All Rights Reserved.</p>
+    </footer>
+
+    <!-- FORM DEMO -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("formMessage").textContent =
+                "Thank you! This demo form does not send messages yet.";
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
